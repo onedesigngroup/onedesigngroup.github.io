@@ -11,6 +11,7 @@
 
 <title>ONE DESIGN | ONE PLUS</title>
 
+<!-- favicon -->
 <link rel="icon" type="image/png" href="images/favicon.png">
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -86,7 +87,16 @@
           <div class="row">
 
 
-               <div class="col-md-4 col-sm-6">
+          <ul class="searchList">
+            <li><a href="#all">ALL</a></li>
+            <li><a href="#brand">BRAND</a></li>
+            <li><a href="#logo">LOGO</a></li>
+            <li><a href="#web">WEB</a></li>
+            <li><a href="#app">APP</a></li>
+          </ul>
+            
+          <ul class="list">
+               <li class="col-md-4 col-sm-6 all brand">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img1.jpg" class="img-responsive" alt="Portfolio">
@@ -98,9 +108,23 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
 
-               <div class="col-md-4 col-sm-6">
+               <li class="col-md-4 col-sm-6 all brand">
+                    <a href="single-project.html">
+                         <div class="portfolio-thumb">
+                              <img src="images/portfolio-img1.jpg" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>Project Name</h3>
+                                             <small>Brand Identity</small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </li>
+
+               <li class="col-md-4 col-sm-6 all web">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img2.jpg" class="img-responsive" alt="Portfolio">
@@ -112,9 +136,9 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
 
-               <div class="col-md-4 col-sm-6">
+               <li class="col-md-4 col-sm-6 all app">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img3.jpg" class="img-responsive" alt="Portfolio">
@@ -126,9 +150,9 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
 
-               <div class="col-md-4 col-sm-6">
+               <li class="col-md-4 col-sm-6 all logo">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img4.jpg" class="img-responsive" alt="Portfolio">
@@ -140,9 +164,9 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
 
-               <div class="col-md-4 col-sm-6">
+               <li class="col-md-4 col-sm-6 all brand">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img5.jpg" class="img-responsive" alt="Portfolio">
@@ -154,9 +178,9 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
 
-               <div class="col-md-4 col-sm-6">
+               <li class="col-md-4 col-sm-6 all brand">
                     <a href="single-project.html">
                          <div class="portfolio-thumb">
                               <img src="images/portfolio-img6.jpg" class="img-responsive" alt="Portfolio">
@@ -168,7 +192,8 @@
                                    </div>
                          </div>
                     </a>
-               </div>
+               </li>
+          </ul>
 
                <div class="col-md-12 col-sm-12 text-center">
                     <h3>hello, if you interest working together. just send message <a href="contact.html">contact page</a></h3>
@@ -224,6 +249,30 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() { //searchlist
+    var lists = $('.list li');
+    $(document).on('click', '.searchList a', function() {
+
+        // 絞り込みの対象を取得
+        var target = $(this).attr('href').replace('#', '');
+        lists.each(function(e) {
+            // 絞り込み対象の場合は表示
+            if($(this).hasClass(target)) {
+                $(this).show(500);
+            // 絞り込み対象でない場合は非表示
+            } else {
+                $(this).hide(500);
+            }
+        });
+        return false;
+    });
+});
+
+</script>
 
 </body>
 </html>

@@ -655,7 +655,28 @@ footer .footer-copyright {
 }
 
 
+/*---------------------------------------
+   search list           
+-----------------------------------------*/
 
+.searchList {
+  text-align: center;
+
+} 
+
+.searchList li {
+  list-style: none;
+  text-align: center;
+  display: inline;
+} 
+
+.list {
+  margin: 0 auto;
+}
+
+.list li{
+  list-style: none;
+}
 /*---------------------------------------
    Mobile Responsive         
 -----------------------------------------*/
